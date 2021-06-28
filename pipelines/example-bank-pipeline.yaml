@@ -28,8 +28,6 @@ spec:
         outputs:
           - name: image
             resource: transaction-image
-      runAfter:
-        - code-analysis
       taskRef:
         kind: Task
         name: s2i-java-8
@@ -48,8 +46,6 @@ spec:
         outputs:
           - name: image
             resource: user-image
-      runAfter:
-        - code-analysis
       taskRef:
         kind: Task
         name: s2i-java-8
@@ -64,8 +60,6 @@ spec:
         outputs:
           - name: image
             resource: ui-image
-      runAfter:
-        - code-analysis
       taskRef:
         kind: Task
         name: s2i-nodejs
