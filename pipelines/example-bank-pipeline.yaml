@@ -13,26 +13,6 @@ spec:
     - name: ui-image
       type: image
   tasks:
-    - name: code-analysis
-      params:
-        - name: GOALS
-          value:
-            - install
-            - 'sonar:sonar'
-            - '-Dsonar.host.url=http://sonarqube:9000'
-            - '-Dsonar.userHome=/tmp/sonar'
-            - '-DskipITs'
-            - '-Darguments=-DskipITs'
-      resources:
-        inputs:
-          - name: source
-            resource: bank-git
-      taskRef:
-        kind: Task
-        name: maven
-      workspaces:
-        - name: maven-repo
-          workspace: local-maven-repo
     - name: build-transaction
       params:
         - name: TLSVERIFY
